@@ -13,7 +13,7 @@
 ## Scenario Context
 As a security analyst for a large financial services organization relying heavily on Microsoft Azure services, I observed multiple failed login attempts, particularly targeting privileged accounts during off-hours. This raises concerns about a brute-force attack or a credential-stuffing campaign. 
 
-My goal is to investigate, detect, and mitigate this potential threat in compliance with **NIST 800-61** guidelines.
+**Goal:** Investigate, detect, and mitigate this potential threat in compliance with **NIST 800-61** guidelines.
 
 ---
 

@@ -59,9 +59,9 @@ DeviceLogonEvents
 | where NumberOfFailures >= 10
 | sort by NumberOfFailures desc 
 ```
-<img alt="Image" src="https://github.com/user-attachments/assets/413fbbf6-54b4-46e4-925c-016e3224ca02" />
+<p align="center"> <img width="1100" alt="Image" src="https://github.com/user-attachments/assets/413fbbf6-54b4-46e4-925c-016e3224ca02" /> </p>
 
-- **Four Azure VMs** were targeted by brute force attempts from **three public IPs**:
+- **Four Azure VMs** were targeted by brute force attempts from **four public IPs**:
   
   | **Remote IP**       | **Failed Attempts** | **Target Machine**    |
   |---------------------|---------------------|-----------------------|
@@ -157,7 +157,7 @@ After clicking **"Scheduled query rule"**, you’ll see the **Analytics rule det
      - **🎯 Initial Access**
      - **🔑 Credential Access**
       
-<img alt="Image" src="https://github.com/user-attachments/assets/4610426b-57df-4a75-a522-98aa210b547f" />
+<img width="635" alt="Image" src="https://github.com/user-attachments/assets/4610426b-57df-4a75-a522-98aa210b547f" />
 
 5. **Rule type**:  
    - Select **Scheduled 🕒**.
@@ -181,7 +181,7 @@ DeviceLogonEvents
 | where NumberOfFailures >= 10
 | sort by NumberOfFailures desc
 ```
-<img alt="Image" src="https://github.com/user-attachments/assets/a7d9a1c9-bec0-4482-aafc-c2e21d3f4dd4" />
+<img width="635" alt="Image" src="https://github.com/user-attachments/assets/a7d9a1c9-bec0-4482-aafc-c2e21d3f4dd4" />
 
 - 🛠️ This query filters **sign-in logs** for failed login attempts and identifies unusual patterns.  
 - 💡 Adjust thresholds based on your environment (e.g., `> 5 failed attempts`).

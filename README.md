@@ -59,7 +59,7 @@ DeviceLogonEvents
 | where NumberOfFailures >= 10
 | sort by NumberOfFailures desc 
 ```
-<img width="1035" alt="Image" src="https://github.com/user-attachments/assets/8e039f14-1ba2-456b-8d5a-0594027ba304" />
+<img alt="Image" src="https://github.com/user-attachments/assets/413fbbf6-54b4-46e4-925c-016e3224ca02" />
 
 - **Four Azure VMs** were targeted by brute force attempts from **three public IPs**:
   
@@ -70,7 +70,7 @@ DeviceLogonEvents
   | `95.143.190.130`    | 100                 | `vmwin`    |
   | `111.68.111.218`     | 98                 | `mde-bm`    |
 ---
-<img alt="Image" src="https://github.com/user-attachments/assets/413fbbf6-54b4-46e4-925c-016e3224ca02" />
+<img width="1035" alt="Image" src="https://github.com/user-attachments/assets/8e039f14-1ba2-456b-8d5a-0594027ba304" />
 
 - KQL Query to detect failed logins:  
   ```kql

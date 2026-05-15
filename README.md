@@ -72,7 +72,7 @@ DeviceLogonEvents
 ```
 <img width="1035" alt="Image" src= "https://github.com/user-attachments/assets/50b8e281-ec4c-4857-89d0-6450be5dfc53" />
 
-- **Three Azure VMs** were targeted by brute force attempts from **three public IPs**:
+- **Four Azure VMs** were targeted by brute force attempts from **three public IPs**:
   
   | **Remote IP**       | **Failed Attempts** | **Target Machine**    |
   |---------------------|---------------------|-----------------------|
@@ -80,8 +80,8 @@ DeviceLogonEvents
   | `111.68.111.218`     | 98                 | `mde-bm`    |
   | `116.177.172.108`    | 80                 | `coco.zedqnbgwtqwuno21ne3bc0xqda.cx.internal.cloudapp.net`     |
   | `159.65.221.34`    | 100                 | `app-sec-lab`     |
-
-<img alt="Image" src= "https://github.com/user-attachments/assets/357a90b6-43ee-495e-9011-9ef2103cd9ad" />
+---
+<img alt="Image" src= "https://github.com/user-attachments/assets/0f72c27e-8c94-4114-be45-85d19c6f5e80" />
 
 - KQL Query to detect failed logins:  
   ```kql

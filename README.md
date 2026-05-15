@@ -176,11 +176,12 @@ In the **Set rule query** step, paste your KQL query to detect brute-force attem
 ```kql
 DeviceLogonEvents
 | where TimeGenerated >= ago(5h)
-| where ActionType == "LogonFailed"
+| where ActionType contains "LogonFailed"
 | summarize NumberOfFailures = count() by RemoteIP, ActionType, DeviceName
-| where NumberOfFailures >= 10s
+| where NumberOfFailures >= 10
+| sort by NumberOfFailures desc
 ```
-![Screenshot 2025-01-14 111832](https://github.com/user-attachments/assets/b1164c0f-6022-444e-a409-43c1d4e9a579)
+<img alt="Image" src="https://github.com/user-attachments/assets/a7d9a1c9-bec0-4482-aafc-c2e21d3f4dd4" />
 
 - 🛠️ This query filters **sign-in logs** for failed login attempts and identifies unusual patterns.  
 - 💡 Adjust thresholds based on your environment (e.g., `> 5 failed attempts`).

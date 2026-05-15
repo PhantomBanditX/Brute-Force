@@ -50,18 +50,7 @@ Implement a **Sentinel Scheduled Query Rule** using KQL in Log Analytics to dete
 
 ### 2️⃣ Detection & Analysis
 #### Observations:
-```kql
-DeviceFileEvents
-| top 20 by Timestamp desc
-```
-```kql
-DeviceNetworkEvents
-| top 20 by Timestamp desc
-```
-```kql
-DeviceProcessEvents
-| top 20 by Timestamp desc
-```
+
 ```kql
 DeviceLogonEvents
 | where TimeGenerated >= ago(5h)
@@ -70,23 +59,23 @@ DeviceLogonEvents
 | where NumberOfFailures >= 10
 | sort by NumberOfFailures desc 
 ```
-<img width="1035" alt="Image" src= "https://github.com/user-attachments/assets/50b8e281-ec4c-4857-89d0-6450be5dfc53" />
+<img width="1035" alt="Image" src="https://github.com/user-attachments/assets/8e039f14-1ba2-456b-8d5a-0594027ba304" />
 
 - **Four Azure VMs** were targeted by brute force attempts from **three public IPs**:
   
   | **Remote IP**       | **Failed Attempts** | **Target Machine**    |
   |---------------------|---------------------|-----------------------|
+  | `58.56.219.109`    | 81                 | `stig-hassanlab`    |
+  | `94.26.106.229`    | 80                 | `app-sec-lab`    |
   | `95.143.190.130`    | 100                 | `vmwin`    |
   | `111.68.111.218`     | 98                 | `mde-bm`    |
-  | `116.177.172.108`    | 80                 | `coco.zedqnbgwtqwuno21ne3bc0xqda.cx.internal.cloudapp.net`     |
-  | `159.65.221.34`    | 100                 | `app-sec-lab`     |
 ---
-<img alt="Image" src= "https://github.com/user-attachments/assets/0f72c27e-8c94-4114-be45-85d19c6f5e80" />
+<img alt="Image" src="https://github.com/user-attachments/assets/413fbbf6-54b4-46e4-925c-016e3224ca02" />
 
 - KQL Query to detect failed logins:  
   ```kql
   DeviceLogonEvents
-  | where RemoteIP in ("87.120.127.241", "194.0.234.44", "10.0.0.8" )
+  | where RemoteIP in ("111.68.111.218", "95.143.190.130", "94.26.106.229", "58.56.219.109")
   | where ActionType != "LogonFailed"
   ```
 

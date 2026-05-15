@@ -65,22 +65,23 @@ DeviceProcessEvents
 ```kql
 DeviceLogonEvents
 | where TimeGenerated >= ago(5h)
-| where ActionType == "LogonFailed"
+| where ActionType contains "LogonFailed"
 | summarize NumberOfFailures = count() by RemoteIP, ActionType, DeviceName
 | where NumberOfFailures >= 10
+| sort by NumberOfFailures desc 
 ```
-![Screenshot 2025-01-13 182228](https://github.com/user-attachments/assets/d69ebc60-597d-4c13-8ef2-20b19b7a3778)
-
+<img width="1035" alt="Image" src= "https://github.com/user-attachments/assets/50b8e281-ec4c-4857-89d0-6450be5dfc53" />
 
 - **Three Azure VMs** were targeted by brute force attempts from **three public IPs**:
   
   | **Remote IP**       | **Failed Attempts** | **Target Machine**    |
   |---------------------|---------------------|-----------------------|
-  | `87.120.127.241`    | 116                 | `linux-agent-scan-sam`    |
-  | `194.0.234.44`     | 100                 | `bennyvirtual`    |
-  | `10.0.0.8`    | 22, 20                 | `windows-server,ryan-final-lab `     |
+  | `95.143.190.130`    | 100                 | `vmwin`    |
+  | `111.68.111.218`     | 98                 | `mde-bm`    |
+  | `116.177.172.108`    | 80                 | `coco.zedqnbgwtqwuno21ne3bc0xqda.cx.internal.cloudapp.net`     |
+  | `159.65.221.34`    | 100                 | `app-sec-lab`     |
 
-![Screenshot 2025-01-06 181511](https://github.com/user-attachments/assets/3134d542-b44d-4036-b2ce-1827bc7dda88)
+<img alt="Image" src= "https://github.com/user-attachments/assets/357a90b6-43ee-495e-9011-9ef2103cd9ad" />
 
 - KQL Query to detect failed logins:  
   ```kql

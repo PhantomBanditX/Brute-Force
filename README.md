@@ -1,9 +1,3 @@
-
-
-
-
----
-
 # 🚨 Incident Response: Brute Force Attempt Detection
 
 <img alt="Image" src="https://github.com/user-attachments/assets/20d2e367-083e-473a-af5c-93322a299366" />
